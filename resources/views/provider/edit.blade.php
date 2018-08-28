@@ -30,8 +30,8 @@
         </div>
     @endif
 
-
-    <form action="{{ route('provider.update',$provider->id) }}" method="POST" class="form" >
+	{{ Form::open(array('route' => ['provider.update',$provider->id] , 'files' => true)) }}
+    <!--form action="{{ route('provider.update',$provider->id) }}" method="POST" class="form" -->
 
         @csrf
 
@@ -118,8 +118,24 @@
 						</div>
 
 
+	    	<div class="col-xs-12 col-sm-12 col-md-9">
+                <div class="form-group">
+                    <strong>URL da Imagem:</strong>
+                    {{ Form::text('url_image', $provider->url_image ,['class' => 'form-control','placeholder' => 'URL' ]) }}
 
-	    </form>
+                </div>
+            </div>
+			
+			<div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="form-group">
+                    <strong>Imagem:</strong>
+
+                    {{ Form::file('image',['class'=>'']) }}
+
+                </div>
+            </div>
+
+    {{ Form::close() }}
 			
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">

@@ -27,6 +27,12 @@ class ProviderController extends Controller
 
     public function store(Request $request)
     {
+        if($request->file('image'))
+        {
+		    $filename = $request->file('image')->store('image');
+            $request->merge([ 'url_image' => $filename ]);
+        }
+
 		Provider::create($request->all());
         return redirect()->route('provider.index')
 					->with('success','Novo Prestador de Serviço Criado!');
@@ -45,6 +51,13 @@ class ProviderController extends Controller
     {
 
         $lista=$request->request->get('hdn_list');
+
+        if($request->file('image'))
+        {
+            $filename = $request->file('image')->store('image');
+            if($filename)$request->merge([ 'url_image' => $filename ]);
+            dd($filename);
+        }
 
         $provider->subtypes()->detach();
         if (!empty ($lista))
