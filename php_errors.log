@@ -1,0 +1,9 @@
+[04-Jul-2018 17:57:13 UTC] PHP Warning:  Uncaught ErrorException: Array to string conversion in /home/ubuntu/workspace/escopo1_leve/vendor/laravel/framework/src/Illuminate/Routing/Router.php:394
+Stack trace:
+#0 /home/ubuntu/workspace/escopo1_leve/vendor/laravel/framework/src/Illuminate/Routing/Router.php(394): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Array to string...', '/home/ubuntu/wo...', 394, Array)
+#1 /home/ubuntu/workspace/escopo1_leve/vendor/laravel/framework/src/Illuminate/Routing/Router.php(394): require()
+#2 /home/ubuntu/workspace/escopo1_leve/vendor/laravel/framework/src/Illuminate/Routing/Router.php(350): Illuminate\Routing\Router->loadRoutes(Array)
+#3 /home/ubuntu/workspace/escopo1_leve/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(105): Illuminate\Routing\Router->group(Array, Array)
+#4 /home/ubuntu/workspace/escopo1_leve/routes/web.php(47): Illuminate\Routing\RouteRegistrar->group(Array, Object(Closure))
+#5 /home/ubuntu/workspace/escopo1_leve/vendor/laravel/framework/src/Illuminate/Routing in /home/ubuntu/workspace/escopo1_leve/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 394
+[04-Jul-2018 17:57:13 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required 'Array' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/escopo1_leve/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 394
