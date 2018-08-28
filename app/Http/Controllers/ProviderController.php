@@ -56,7 +56,6 @@ class ProviderController extends Controller
         {
             $filename = $request->file('image')->store('image');
             if($filename)$request->merge([ 'url_image' => $filename ]);
-            dd($filename);
         }
 
         $provider->subtypes()->detach();

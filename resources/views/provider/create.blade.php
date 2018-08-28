@@ -28,8 +28,8 @@
         </div>
     @endif
 
-
-    <form action="{{ route('provider.store') }}" method="POST" class="form" >
+	{{ Form::open( ['route' => 'provider.store' , 'files' => true] ) }}
+    <!--form action="{{ route('provider.store') }}" method="POST" class="form" -->
 
         @csrf
 		<input type="hidden" id="hdn_list" name="hdn_list"/>
@@ -113,7 +113,24 @@
 						</div>
 
 
+	    	<div class="col-xs-12 col-sm-12 col-md-9">
+                <div class="form-group">
+                    <strong>URL da Imagem:</strong>
+                    {{ Form::text('url_image', '' ,['class' => 'form-control','placeholder' => 'URL' ]) }}
 
+                </div>
+            </div>
+			
+			<div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="form-group">
+                    <strong>Imagem:</strong>
+
+                    {{ Form::file('image',['class'=>'']) }}
+
+                </div>
+            </div>
+
+    {{ Form::close() }}
 			
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">

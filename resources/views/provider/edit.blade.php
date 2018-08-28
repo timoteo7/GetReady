@@ -3,8 +3,6 @@
 @section('htmlheader_title')
 	Edição
 @endsection
-
-
 @section('content')
 
     <div class="row">
@@ -34,9 +32,7 @@
     <!--form action="{{ route('provider.update',$provider->id) }}" method="POST" class="form" -->
 
         @csrf
-
 		@method('PUT')
-		
 		<input type="hidden" id="hdn_list" name="hdn_list"/>
 
 
@@ -44,14 +40,14 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Nome:</strong>
-                    <input type="text" name="name" value="{{ $provider->name }}" class="form-control" placeholder="Nome" required >
+                    <input type="text" name="name" value="{{ $provider->name }}" class="form-control" placeholder="Nome" required>
                 </div>
             </div>
             
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Email:</strong>
-                    <input type="text" name="email" value="{{ $provider->email }}" class="form-control" placeholder="Email">
+                    <input type="text" name="email" value="{{ $provider->email }}" class="form-control" placeholder="Email" required>
                 </div>
             </div>
             
@@ -185,7 +181,6 @@
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-check"></i> Salvar</button>
             </div>
-
 		</div>
 		<br>
 
